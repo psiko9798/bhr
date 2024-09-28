@@ -3,9 +3,11 @@ import './App.css';
 import QuestionForm from './components/QuestionForm';
 import ToggleSwitch from './components/ToggleSwitch';
 import HeartButton from './components/HeartButton';
+import { BrowserRouter } from 'react-router-dom';
 
 const App: React.FC = () => {
     return (
+        <BrowserRouter basename="/">
         <div className="App">
             <div className="header">
                 <ToggleSwitch />
@@ -17,6 +19,7 @@ const App: React.FC = () => {
             <div>
             </div>
         </div>
+        </BrowserRouter>
     );
 };
 
