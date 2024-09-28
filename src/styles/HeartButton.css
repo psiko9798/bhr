@@ -1,0 +1,50 @@
+.heart-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.heart {
+    position: absolute;
+    bottom: 5px; /* Start from the top of the page */
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    transform: rotate(45deg);
+    animation: float 1.5s ease-in-out; /* Faster animation */
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: -10px;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(45deg); /* Move to the top of the viewport */
+        opacity: 0;
+    }
+}
